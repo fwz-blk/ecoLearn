@@ -1,0 +1,49 @@
+.feature-grid-section .col {
+  display: block; /* remove flex from outer col */
+}
+
+.feature-grid-section .col > div {
+  display: block; /* text content is in normal flow */
+}
+
+.feature-grid-section h3 {
+  display: flex;
+  align-items: center; /* vertically center SVG with heading text */
+  gap: 12px; /* spacing between SVG and heading text */
+  margin-bottom: 12px;
+  margin-top: 0;
+  line-height: 1.3;
+}
+
+.feature-grid-section svg {
+  flex-shrink: 0; /* prevents SVG from shrinking */
+  flex-grow: 0; /* prevents SVG from growing */
+  color: #0d6efd; /* Bootstrap primary color - makes icons stand out */
+  opacity: 0.9;
+  width: 32px;
+  height: 32px;
+}
+
+.feature-grid-section p {
+  margin-bottom: 0;
+  color: #6c757d; /* Bootstrap text-muted color for better hierarchy */
+  line-height: 1.6;
+}
+
+/* Hover effect for better interactivity */
+.feature-grid-section .col {
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.feature-grid-section .col:hover {
+  background-color: rgba(13, 110, 253, 0.05);
+  transform: translateY(-2px);
+}
+
+.feature-grid-section .col:hover svg {
+  color: #000000;
+  opacity: 1;
+  transform: scale(1.05);
+}

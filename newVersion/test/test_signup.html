@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Signup - EcoLearn</title>
+  <link rel="stylesheet" href="./signup.css">
+</head>
+<body>
+  
+  <div class="signup-container">
+    
+    <!-- Left side - Animated environmental pic -->
+    <div class="side-image left">
+      <img src="i1.png" alt="Nature" class="animated-img">
+    </div>
+    
+    <!-- Center - Signup Form -->
+    <div class="form-section">
+      <div class="form-wrapper">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <h1>Join EcoLearn!</h1>
+        <p class="subtitle">Start your environmental journey today</p>
+        
+        <form>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe">
+          </div>
+          
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="f123@example.com">
+          </div>
+          
+          <div class="form-group">
+            <label>Student ID</label>
+            <input type="text" placeholder="Your Student ID">
+          </div>
+          
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Create password">
+          </div>
+          
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" placeholder="Confirm password">
+          </div>
+          
+          <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+        
+        <p class="toggle-text">
+          Already have an account? <a href="index.html" onclick="openLoginModal(); return false;">Login here</a>
+        </p>
+      </div>
+    </div>
+    
+    <!-- Right side - Animated environmental pic -->
+    <div class="side-image right">
+      <img src="i2.png" alt="Nature" class="animated-img">
+    </div>
+    
+  </div>
+  
+</body>
+</html>
