@@ -1,3 +1,6 @@
+
+
+
 // Map nav links text to section classes
 const sectionMap = {
   'Home': '.hero-section1',
