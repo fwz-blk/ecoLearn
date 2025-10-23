@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoLearn Community</title>
+  <link rel="stylesheet" href="community.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav-bar">
+      <a href="#" class="nav-logo">
+        <h2 class="nav-text">Eco-learn</h2>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-items"><a href="#" class="nav-links">Home</a></li>
+        <li class="nav-items"><a href="#" class="nav-links">Features</a></li>
+        <li class="nav-items"><a href="#" class="nav-links">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="community-container">
+    <h1 class="page-title">Community</h1>
+
+    <!-- Post Bar -->
+    <section class="post-bar">
+      <textarea placeholder="Share your eco-achievement..." rows="2"></textarea>
+      <div class="post-options">
+        <label for="post-photo" class="photo-btn"><i class="fa-solid fa-image"></i> Add Photo</label>
+        <input type="file" id="post-photo" hidden />
+        <input type="text" placeholder="Add location..." class="location-input" />
+        <button class="post-btn">Post</button>
+      </div>
+    </section>
+
+    <!-- Feed -->
+    <section class="feed-grid">
+      <!-- Sample post -->
+      <div class="post-card">
+        <img src="https://source.unsplash.com/400x300/?tree,environment" alt="Eco Post" />
+        <div class="post-content">
+          <p class="caption">Planted 10 trees today 🌱</p>
+          <div class="actions">
+            <span><i class="fa-regular fa-heart"></i> 12 Likes</span>
+            <span><i class="fa-regular fa-comment"></i> 3 Comments</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <img src="https://source.unsplash.com/400x300/?recycling,eco" alt="Eco Post" />
+        <div class="post-content">
+          <p class="caption">Recycled 5kg of plastic waste ♻️</p>
+          <div class="actions">
+            <span><i class="fa-regular fa-heart"></i> 20 Likes</span>
+            <span><i class="fa-regular fa-comment"></i> 8 Comments</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
