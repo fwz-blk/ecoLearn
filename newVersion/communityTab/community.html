@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>EcoLearn Community</title>
   <link rel="stylesheet" href="community.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <header>
     <nav class="nav-bar">
-      <a href="#" class="nav-logo">
-        <h2 class="nav-text">Eco-learn</h2>
-      </a>
+      <a href="#" class="nav-logo"><h2 class="nav-text">Eco-learn</h2></a>
       <ul class="nav-menu">
         <li class="nav-items"><a href="#" class="nav-links">Home</a></li>
         <li class="nav-items"><a href="#" class="nav-links">Features</a></li>
@@ -24,42 +23,67 @@
   <main class="community-container">
     <h1 class="page-title">Community</h1>
 
-    <!-- Post Bar -->
-    <section class="post-bar">
-      <textarea placeholder="Share your eco-achievement..." rows="2"></textarea>
+    <!-- Post Bar (sticky) -->
+    <section class="post-bar" id="postBar">
+      <textarea id="composerText" placeholder="Share your eco-achievement..." rows="2"></textarea>
       <div class="post-options">
-        <label for="post-photo" class="photo-btn"><i class="fa-solid fa-image"></i> Add Photo</label>
-        <input type="file" id="post-photo" hidden />
-        <input type="text" placeholder="Add location..." class="location-input" />
-        <button class="post-btn">Post</button>
+        <label for="composerPhoto" class="photo-btn"><i class="fa-solid fa-image"></i> Add Photo</label>
+        <input type="file" id="composerPhoto" accept="image/*" hidden />
+        <input id="composerLocation" type="text" placeholder="Add location..." class="location-input" />
+        <button id="composerPostBtn" class="post-btn">Post</button>
       </div>
+      <!-- local preview (frontend only) -->
+      <div id="composerPreview" class="composer-preview hidden"></div>
     </section>
 
-    <!-- Feed -->
-    <section class="feed-grid">
-      <!-- Sample post -->
-      <div class="post-card">
-        <img src="https://source.unsplash.com/400x300/?tree,environment" alt="Eco Post" />
-        <div class="post-content">
-          <p class="caption">Planted 10 trees today 🌱</p>
-          <div class="actions">
-            <span><i class="fa-regular fa-heart"></i> 12 Likes</span>
-            <span><i class="fa-regular fa-comment"></i> 3 Comments</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <img src="https://source.unsplash.com/400x300/?recycling,eco" alt="Eco Post" />
-        <div class="post-content">
-          <p class="caption">Recycled 5kg of plastic waste ♻️</p>
-          <div class="actions">
-            <span><i class="fa-regular fa-heart"></i> 20 Likes</span>
-            <span><i class="fa-regular fa-comment"></i> 8 Comments</span>
-          </div>
-        </div>
-      </div>
+    <!-- Feed grid -->
+    <section class="feed-grid" id="feedGrid">
+      <!-- We'll inject post cards here. Some starter/demo cards below: -->
+      <!-- Demo posts are inserted by JS on load; you can keep these commented out if you want -->
     </section>
   </main>
+  
+  <!-- Blur overlay (used for modals and expanded post) -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Expanded Post Modal -->
+  <div id="postModal" class="modal">
+    <div class="modal-content post-modal-content">
+      <span class="close-btn" id="postModalClose">&times;</span>
+
+      <div class="modal-grid">
+        <div class="modal-image-wrap">
+          <img id="modalImage" src="" alt="Post image" />
+        </div>
+
+        <div class="modal-right">
+          <div class="modal-post-header">
+            <div class="modal-user-avatar">U</div>
+            <div class="modal-user-meta">
+              <div class="modal-username">user_id</div>
+              <div class="modal-timestamp">just now</div>
+            </div>
+          </div>
+
+          <div class="modal-caption" id="modalCaption"></div>
+
+          <div class="modal-actions">
+            <button id="modalLikeBtn" class="icon-btn"><i class="fa-regular fa-heart"></i> <span id="modalLikeCount">0</span></button>
+            <button id="modalCommentBtn" class="icon-btn"><i class="fa-regular fa-comment"></i> <span id="modalCommentCount">0</span></button>
+            <button id="modalShareBtn" class="icon-btn"><i class="fa-solid fa-share"></i> Share</button>
+          </div>
+
+          <div id="modalComments" class="modal-comments"></div>
+
+          <div class="modal-add-comment">
+            <input id="modalCommentInput" type="text" placeholder="Write a comment..." />
+            <button id="modalCommentPost" class="post-comment-btn">Post</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="community.js" type="module"></script>
 </body>
 </html>
