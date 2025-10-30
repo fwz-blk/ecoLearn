@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLearn - Discussion Forum</title>
+  <link rel="stylesheet" href="discussion-forum.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1>Community Hub</h1>
+      <p>Connect with fellow eco-warriors, share your achievements, and collaborate on environmental projects</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-navigation">
+      <button class="tab-btn" data-tab="student-posts">
+        <i class="fas fa-image"></i> Student Posts
+      </button>
+      <button class="tab-btn active" data-tab="discussion-forum">
+        <i class="fas fa-comments"></i> Discussion Forum
+      </button>
+    </div>
+
+    <!-- Discussion Forum View (Main List) -->
+    <div id="forum-list-view">
+      <div class="discussions-container" id="discussionsContainer">
+        <!-- Discussion topics will be loaded here -->
+      </div>
+    </div>
+
+    <!-- Discussion Thread View (Individual Topic) -->
+    <div id="thread-view" style="display: none;">
+      <button class="back-btn" id="backBtn">
+        <i class="fas fa-arrow-left"></i> Back to Forum
+      </button>
+
+      <div class="thread-header" id="threadHeader">
+        <!-- Thread details will be loaded here -->
+      </div>
+
+      <div class="essays-section">
+        <div class="essays-header">
+          <h2>Discussion Responses</h2>
+          <button class="write-essay-btn" id="writeEssayBtn">
+            <i class="fas fa-pen"></i> Write Essay
+          </button>
+        </div>
+        <div class="essays-container" id="essaysContainer">
+          <!-- Essays will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Essay Submission Modal -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- modal kept in DOM. Animated via CSS (active class) -->
+  <div class="modal" id="essayModal" aria-hidden="true" role="dialog" aria-labelledby="essayModalTitle">
+    <div class="modal-content" role="document">
+      <button class="close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+      <h2 id="essayModalTitle">Write Your Essay</h2>
+      <form id="essayForm" novalidate>
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="authorName" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label>User ID</label>
+          <input type="text" id="userId" placeholder="Enter your user ID" required />
+        </div>
+        <div class="form-group">
+          <label>Your Essay</label>
+          <textarea id="essayContent" rows="12" placeholder="Share your thoughts and insights..." required></textarea>
+          <small class="word-count" id="wordCount">0 words</small>
+        </div>
+        <button type="submit" class="submit-btn">Submit Essay</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="discussion-forum.js"></script>
+</body>
+</html>
