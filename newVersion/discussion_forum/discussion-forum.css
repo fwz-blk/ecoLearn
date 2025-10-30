@@ -43,7 +43,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 15px;
+  margin-bottom: 15px;  
   letter-spacing: -1px;
 }
 .page-header p {
@@ -560,4 +560,11 @@ form {
   .discussion-card h3 {
     font-size: 1.5rem;
   }
+}
+
+.essay-avatar img {
+  width: 40px;      /* ✅ smaller size */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
